@@ -12,5 +12,9 @@ jobs:
         node-version: [10.x, 12.x, 14.x]
 
     steps:
-      - name: Angular Github Actions
-        uses: mayurrawte/github-angular-actions@latest
+      - uses: actions/checkout@v2
+      - name: Angular Full CI
+        uses: colbyhill21/angular-full-ci/@v1.0
+        with:
+          testcommand: run test:ci
+          mocha: true
